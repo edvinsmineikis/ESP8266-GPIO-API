@@ -87,7 +87,7 @@ Reply
 POST
 ```
 {
-    "cmd": "digitalWrite",
+    "cmd": "analogWrite",
     "pin": 4,
     "value": 137
 }
