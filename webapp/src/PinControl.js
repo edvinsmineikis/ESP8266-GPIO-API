@@ -11,12 +11,17 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import Stack from '@mui/material/Stack';
 
 
+const sendPost = (cmd, value=0) => {
+    
+}
+
 export default function PinControl({ pinNumber }) {
     const [value, setValue] = React.useState('');
     const handleChange = event => {
         const result = event.target.value.replace(/\D/g, '');
         setValue(event.target.value);
     };
+    let pinValue = 0;
 
     return (
         <Card>
@@ -28,10 +33,10 @@ export default function PinControl({ pinNumber }) {
                             <InputLabel id="pin-action" fullwidth>Command</InputLabel>
                             <Stack spacing={2}>
                                 <Select
-                                    labelId="pin-action"
                                     id="pin-action"
+                                    labelId="pin-action"
                                     label="Command"
-                                    fullwidth
+                                    
                                 >
                                     <MenuItem value="pinMode">pinMode</MenuItem>
                                     <MenuItem value="digitalRead">digitalRead</MenuItem>
@@ -44,7 +49,7 @@ export default function PinControl({ pinNumber }) {
                                     label="Value"
                                     type="number"
                                     onChange={handleChange}
-                                    value={value}
+                                    value={pinValue}
                                 />
                             </Stack>
                         </FormControl>
